@@ -845,7 +845,7 @@ void CHexDlgSearch::Prepare()
 			return;
 		}
 
-		ullSearchDataSize = (std::min)(pHexCtrl->GetDataSize(), *optEnd + 1); //Not more than GetDataSize().
+		ullSearchDataSize = (std::min)((ULONGLONG)(pHexCtrl->GetDataSize()), (ULONGLONG)(*optEnd + 1)); //Not more than GetDataSize().
 	}
 	else {
 		ullSearchDataSize = pHexCtrl->GetDataSize();

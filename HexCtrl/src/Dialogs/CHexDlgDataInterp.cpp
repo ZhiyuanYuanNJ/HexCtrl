@@ -608,7 +608,7 @@ bool CHexDlgDataInterp::SetDataBinary(std::wstring_view wsv)const
 	if (wsv.size() != 8 || wsv.find_first_not_of(L"01") != std::wstring_view::npos)
 		return false;
 
-	const auto opt = stn::StrToUInt8(wsv, 2);
+	const auto opt = stn::StrToInt8(wsv, 2);
 	if (!opt)
 		return false;
 

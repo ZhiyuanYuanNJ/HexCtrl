@@ -1104,7 +1104,7 @@ void CHexDlgTemplMgr::OnListSetData(NMHDR* pNMHDR, LRESULT* /*pResult*/)
 			fSetRet = true;
 			switch (pField->iSize) {
 			case 1:
-				if (const auto opt = stn::StrToUInt8(pwszText); opt) {
+				if (const auto opt = stn::StrToInt8(pwszText); opt) {
 					SetTData(*opt, ullOffset, false);
 				}
 				break;
@@ -1469,7 +1469,7 @@ void CHexDlgTemplMgr::RemoveNodeWithAppliedID(int iAppliedID)
 bool CHexDlgTemplMgr::SetDataBool(LPCWSTR pwszText, ULONGLONG ullOffset) const
 {
 	if (IsShowAsHex()) {
-		if (const auto opt = stn::StrToUInt8(pwszText); opt) {
+		if (const auto opt = stn::StrToInt8(pwszText); opt) {
 			SetTData(*opt, ullOffset, false);
 			return true;
 		}
